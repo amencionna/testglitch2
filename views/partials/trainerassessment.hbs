@@ -1,0 +1,66 @@
+<section class="ui raised segment">
+    <table class="ui table" style="text-align:center">
+        <thead>
+        <tr>
+            <th>Weight</th>
+            <th>Thigh</th>
+            <th>Upper Arm</th>
+            <th>Chest</th>
+            <th>Waist</th>
+            <th>Hips</th>
+            <th>Date</th>
+            <th>Trainer Comment</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each assessments}}
+            <tr>
+                <td>
+                    {{weight}}
+                </td>
+                <td>
+                    {{thigh}}
+                </td>
+                <td>
+                    {{upperarm}}
+                </td>
+                <td>
+                    {{chest}}
+                </td>
+                <td>
+                    {{waist}}
+                </td>
+                <td>
+                    {{hips}}
+                </td>
+
+                <td>
+                    {{date}}
+                </td>
+                <td>
+                    {{comment}}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="9">
+                    <form action="/trainerdash/addcomment/" method="POST">
+                        <div class="ui form">
+
+                        <input name="id" value="{{id}}" hidden>
+                        <input name="member" id="member" value="{{memberid}}" hidden>
+                            <div class="field">
+                        <textarea rows ="2" name="comment" id="comment" ></textarea>
+                                </div>
+
+                            <button class="ui button" type="submit">
+                            <i class="ui plus icon"></i>
+                            Update Comment
+                        </button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</section>

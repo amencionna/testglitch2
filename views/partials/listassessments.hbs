@@ -1,0 +1,66 @@
+
+<section class="ui raised segment">
+    <table class="ui table">
+        <thead>
+        <tr>
+            <th>Weight</th>
+            <th>Thigh</th>
+            <th>Upper Arm</th>
+            <th>Chest</th>
+            <th>Waist</th>
+            <th>Hips</th>
+            <th>Date</th>
+            <th>Trend</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each assessments}}
+            <tr>
+                <td>
+                    {{weight}}
+                </td>
+                <td>
+                    {{thigh}}
+                </td>
+                <td>
+                    {{upperarm}}
+                </td>
+                <td>
+                    {{chest}}
+                </td>
+                <td>
+                    {{waist}}
+                </td>
+                <td>
+                    {{hips}}
+                </td>
+
+                <td>
+                    {{date}}
+                </td>
+                <td>
+                    {{# if higher}}
+                        <i class="green dashboard icon"></i>
+                    {{else}}
+                        <i class="red dashboard icon"></i>
+                    {{/if}}
+                </tr>
+                <td>
+                    <a href="/dashboard/deleteassessment/{{id}}" class="ui icon button">
+                        <i class="icon trash"></i>
+                    </a>
+                </td>
+                </tr>
+                 <tr>
+                <td>
+                      Trainer's comment:  {{comment}}
+                        </td>
+                 </tr>
+           {{/each}}
+        </tbody>
+    </table>
+</section>
+
+
+
+
